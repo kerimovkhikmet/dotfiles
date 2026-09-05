@@ -1,0 +1,9 @@
+#!/bin/sh
+# global commit-msg hook - enforces the ticket/conventional commit format.
+# skipped silently when commitlint is absent (npm i -g @commitlint/cli).
+
+if ! command -v commitlint >/dev/null 2>&1; then
+  exit 0
+fi
+
+exec commitlint --color=never --config "$HOME/.config/git/hooks/commitlint.config.mjs" --edit "$1"

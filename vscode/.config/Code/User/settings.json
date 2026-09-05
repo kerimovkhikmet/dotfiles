@@ -1,0 +1,142 @@
+{
+    // ─── Editor Settings ────────────────────────────────────────────────────────
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.codeLens": true,
+    "editor.detectIndentation": false,
+    "editor.largeFileOptimizations": false,
+    "editor.minimap.enabled": false,
+
+    // ─── Workbench Settings ─────────────────────────────────────────────────────
+    "workbench.colorTheme": "Rosé Pine Moon (no italics)",
+    "workbench.iconTheme": "rose-pine-icons",
+    "workbench.sideBar.location": "right",
+    "workbench.editor.tabSizing": "fixed",
+    "workbench.editor.pinnedTabSizing": "compact",
+    "workbench.editor.editorActionsLocation": "titleBar",
+    // vim.statusBarColorControl needs the bar visible (mode colors)
+    "workbench.statusBar.visible": true,
+
+    // ─── File Handling & Search ─────────────────────────────────────────────────
+    "files.associations": {
+        ".gitlab-ci.yml": "yaml"
+    },
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "search.useGlobalIgnoreFiles": true,
+    "search.useIgnoreFiles": true,
+    "explorer.confirmDelete": false,
+
+    // ─── Terminal Settings ──────────────────────────────────────────────────────
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.tabs.location": "left",
+    "terminal.integrated.tabs.enabled": false,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+
+    // ─── Diff Editor Settings ───────────────────────────────────────────────────
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.diffAlgorithm": "advanced",
+    "diffEditor.maxComputationTime": 0,
+
+    // ─── Language-Specific Formatters ───────────────────────────────────────────
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+
+    // ─── YAML Settings ──────────────────────────────────────────────────────────
+    "yaml.customTags": [
+        "!reference sequence"
+    ],
+    "yaml.maxItemsComputed": 50000,
+
+    // ─── CSV & Comments Plugin Settings ─────────────────────────────────────────
+    "rainbow_csv.rbql_with_headers_by_default": true,
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00"
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB"
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00"
+        },
+        {
+            "tag": "*",
+            "color": "#98C379"
+        }
+    ],
+
+    // ─── Kubernetes Plugin Settings ─────────────────────────────────────────────
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path.linux": "${userHome}/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vscode-kubernetes.helm-path.linux": "${userHome}/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vs-kubernetes.minikube-show-information-expiration": "2023-09-02T14:21:28.152Z"
+    },
+
+    // ─── Miscellaneous Settings ─────────────────────────────────────────────────
+    "workbench.editorAssociations": {
+        "*.csv": "default",
+        "*.odt": "default"
+    },
+    "redhat.telemetry.enabled": true,
+    "chat.commandCenter.enabled": false,
+    "window.titleBarStyle": "custom",
+    "window.customTitleBarVisibility": "auto",
+    "chat.disableAIFeatures": true,
+
+    // ─── Vim (VSCodeVim) - nvim migration bridge ────────────────────────────────
+    // same keymaps and habits as nvim so the switch is seamless;
+    // remove this whole section + extension once the migration lands
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": ["#2e7d32", "#ffffff"],
+    "vim.statusBarColors.insert": ["#1565c0", "#ffffff"],
+    "vim.statusBarColors.visual": ["#6a1b9a", "#ffffff"],
+    "vim.statusBarColors.visualline": ["#6a1b9a", "#ffffff"],
+    "vim.statusBarColors.visualblock": ["#4a148c", "#ffffff"],
+    "vim.statusBarColors.replace": ["#c62828", "#ffffff"],
+    "vim.hlsearch": true,
+    // nvim: clipboard=unnamedplus
+    "vim.useSystemClipboard": true,
+    // nvim: mapleader = " "
+    "vim.leader": "<space>",
+    // nvim-style quick jumps across lines
+    "vim.easymotion": true,
+    // nvim: yank highlight
+    "vim.highlightedyank.enable": true,
+    "vim.handleKeys": {
+        "<C-p>": false,
+        "<C-f>": false,
+        "<C-n>": false,
+        "<C-b>": false
+    },
+    "editor.cursorStyle": "line",
+    // nvim: relativenumber
+    "editor.lineNumbers": "relative"
+}

@@ -1,0 +1,51 @@
+[user]
+	name = Khikmet Kerimov
+	email = 22275642+kerimovkhikmet@users.noreply.github.com
+
+[init]
+	defaultBranch = master
+
+[core]
+	editor = nvim
+	excludesFile = ~/.config/git/ignore
+	autocrlf = input
+	# global hooks: lint/format + commit-msg enforcement on every repo
+	# (repos shipping their own .pre-commit-config.yaml use it instead)
+	hooksPath = ~/.config/git/hooks
+
+[credential]
+	helper = os
+
+[safe]
+	directory = /opt/neovim
+
+[pull]
+	rebase = false
+
+[fetch]
+	prune = true
+	pruneTags = false
+
+[push]
+	default = simple
+	autoSetupRemote = true
+
+[branch]
+	autosetupmerge = true
+	autosetuprebase = never
+
+[color]
+	ui = auto
+
+[diff]
+	colorMoved = zebra
+
+[rerere]
+	enabled = true
+
+[help]
+	autocorrect = prompt
+
+[commit]
+	template = ~/.config/git/commit-template
+	verbose = true

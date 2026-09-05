@@ -1,0 +1,116 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "blocks": [
+    {
+      "alignment": "left",
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "lightYellow",
+          "style": "plain",
+          "template": "{{ .UserName }}{{ if .HostName }}@{{ .HostName }}{{ end }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "cyan",
+          "style": "plain",
+          "template": "<#ffffff>in</> {{ .Path }} ",
+          "type": "path",
+          "properties": {
+            "style": "full"
+          }
+        },
+        {
+          "foreground": "#ff94df",
+          "style": "plain",
+          "template": "<#ffffff>on</> {{ .HEAD }}{{ if .Ahead }} ↑{{ .Ahead }}{{ end }}{{ if .Behind }} ↓{{ .Behind }}{{ end }}{{ if eq .Ahead 0 }}{{ if eq .Behind 0 }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}{{ end }}{{ end }}{{ if and (gt .Ahead 0) (gt .Behind 0) }} ↑↓{{ end }} ",
+          "type": "git",
+          "properties": {
+            "branch_icon": " <#ff94df><b>\ue0a0 </b></>",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        },
+        {
+          "foreground": "#ffd43b",
+          "style": "plain",
+          "template": " \ue235 {{ if .Venv }}{{ .Venv }} {{ end }}{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "python",
+          "properties": {
+            "display_mode": "context",
+            "fetch_virtual_env": true
+          }
+        },
+        {
+          "foreground": "#ffaf00",
+          "style": "plain",
+          "template": " \ue7ad {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} ",
+          "type": "aws",
+          "properties": {
+            "display_default": false
+          }
+        },
+        {
+          "foreground": "#844ae7",
+          "style": "plain",
+          "template": " tf:{{ .WorkspaceName }} ",
+          "type": "terraform",
+          "properties": {
+            "command": "terraform"
+          }
+        }
+      ]
+    },
+    {
+      "alignment": "right",
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "red",
+          "style": "plain",
+          "template": "{{ if gt .Code 0 }}✘{{ .Code }}{{ end }} ",
+          "type": "status",
+          "properties": {
+            "always_enabled": false
+          }
+        },
+        {
+          "foreground": "yellow",
+          "style": "plain",
+          "template": "took {{ .FormattedMs }} ",
+          "type": "executiontime",
+          "properties": {
+            "always_enabled": false,
+            "threshold": 500,
+            "style": "austin"
+          }
+        },
+        {
+          "foreground": "lightBlue",
+          "style": "plain",
+          "template": "{{ .CurrentDate | date \"15:04:05\" }}",
+          "type": "time",
+          "properties": {
+            "time_format": "15:04:05"
+          }
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "lightGreen",
+          "style": "plain",
+          "template": "{{ if .Root }}#{{ else }}>{{ end }} ",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

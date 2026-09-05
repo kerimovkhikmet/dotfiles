@@ -1,0 +1,20 @@
+#!/bin/sh
+# global pre-commit hook - runs the dotfiles config on every repo.
+# repos with their own .pre-commit-config.yaml take precedence.
+# bypass: git commit --no-verify
+
+if ! command -v pre-commit >/dev/null 2>&1; then
+  echo "pre-commit not found - skipping (uv tool install pre-commit)" >&2
+  exit 0
+fi
+
+repo="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+
+if [ -f "$repo/.pre-commit-config.yaml" ]; then
+  exec pre-commit run --hook-stage pre-commit "$@"
+else
+  if [ ! -f "$HOME/.pre-commit-config.yaml" ]; then
+    exit 0
+  fi
+  exec pre-commit run --hook-stage pre-commit --config "$HOME/.pre-commit-config.yaml" "$@"
+fi

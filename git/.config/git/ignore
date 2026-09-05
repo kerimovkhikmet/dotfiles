@@ -1,0 +1,40 @@
+# global gitignore - linked to ~/.config/git/ignore via core.excludesFile
+# OS - macOS / Windows / Linux
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Editors / IDEs
+*~
+*.swp
+*.swo
+*.swn
+*.un~
+Session.vim
+.netrwhist
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+.idea/
+.vscode/
+*.sublime-*
+
+# Logs & caches
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+
+# Env & secrets (keep commented until needed)
+# .env
+# .env.local

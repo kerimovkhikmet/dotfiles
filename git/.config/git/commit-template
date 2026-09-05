@@ -1,0 +1,23 @@
+# Header forms - aim <=50 chars, hard <=72
+# |<-------------------------- 50 -------------------------->|< 22 >|
+# With a ticket:    JIRA-1: Capitalized imperative subject
+# Without:          type(scope): Capitalized imperative subject
+# Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+# Scope is optional: chore: Update
+# Breaking change: add ! before the colon (feat!: ) or footer BREAKING CHANGE:
+# Example: feat(ghostty): Add Rose Pine Moon cursor color
+# Example: JIRA-1: Handle macOS reattach-to-user-namespace fallback
+# Example: chore(ci): Pin ruff v0.9.6 in pre-commit
+#
+# Body - blank line after subject, wrap at 72
+# Explain what and why, not how
+# Include context, tradeoffs, alternatives considered, subsystem motivation
+# Use imperative mood: "Add", "Fix", "Remove", not "Added"/"Fixes"
+# No period at end of subject, capital after colon
+# When a ticket exists it is the whole prefix; extra refs go to Refs:/Closes: footers
+# For larger changes, explain why the change is correct, what it fixes, how it was tested.
+
+# Footers - blank line before footers, git trailer format
+# BREAKING CHANGE: `extends` key now used for extending other configs
+# Refs: #123
+# Co-authored-by: Name <email>

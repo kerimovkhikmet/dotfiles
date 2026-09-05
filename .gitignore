@@ -1,0 +1,16 @@
+# local state / secrets
+.env
+.env.*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# tooling caches
+node_modules/
+__pycache__/
+*.pyc
+.ruff_cache/
+.venv/

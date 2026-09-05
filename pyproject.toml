@@ -1,0 +1,30 @@
+[project]
+name = "dotfiles"
+version = "0.1.0"
+description = "dotfiles - bash+python dev, managed with GNU Stow"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.ruff]
+# ruff only for lint+format (no black/mypy)
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/W pycodestyle, F pyflakes, I isort, UP pyupgrade, B flake8-bugbear,
+# SIM flake8-simplify, C4 flake8-comprehensions, RUF ruff-specific
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+
+[tool.ruff.lint.isort]
+known-first-party = ["dotfiles"]
+
+[tool.ruff.lint.pydocstyle]
+# keep without mypy - no type checking, but docs still google style
+convention = "google"

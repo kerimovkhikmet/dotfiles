@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# tmux-sessionizer - project switcher over ~/Development/github.com/*/*
+# Stow: bin/.local/bin/tmux-sessionizer -> ~/.local/bin/tmux-sessionizer
+# bind: prefix + f (see tmux/.config/tmux/tmux.conf)
+# searches ~/Development/github.com/<host>/<repo>; requires fzf
+set -euo pipefail
+
+if ! command -v fzf >/dev/null 2>&1; then
+  echo "tmux-sessionizer: fzf not found - install fzf (apt/brew)" >&2
+  exit 1
+fi
+
+if [[ $# -eq 1 ]]; then
+  selected="$1"
+else
+  selected="$(find "$HOME/Development/github.com" -mindepth 2 -maxdepth 2 -type d 2>/dev/null | fzf)"
+fi
+
+[[ -z "${selected:-}" ]] && exit 0
+
+name="$(basename "$selected" | tr . _)"
+
+if ! tmux has-session -t "$name" 2>/dev/null; then
+  tmux new-session -ds "$name" -c "$selected"
+fi
+tmux switch-client -t "$name"

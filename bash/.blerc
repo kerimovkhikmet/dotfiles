@@ -1,0 +1,8 @@
+# ~/.blerc - ble.sh config, loaded on attach
+# full option list: ~/.local/share/blesh/doc/ or https://akinomyoga.github.io/ble.sh/
+
+# keymap - emacs is default; switch to vi with: bleopt default_keymap=vi
+bleopt default_keymap=emacs
+
+# completion menu with descriptions
+bleopt complete_menu_style=desc_raw
