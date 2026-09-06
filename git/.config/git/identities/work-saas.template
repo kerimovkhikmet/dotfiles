@@ -1,0 +1,9 @@
+# work account on a public host (github.com | gitlab.com)
+# use: copy per account, drop .template, fill placeholders, wire the include in .gitconfig
+# wire: [includeIf "gitdir:~/Development/<host>/<org>/"] - after the host-wide personal include
+[user]
+	name = Khikmet Kerimov
+	email = EMAIL_WORK
+
+[core]
+	sshCommand = ssh -i ~/.ssh/id_ed25519_work -o IdentitiesOnly=yes

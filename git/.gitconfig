@@ -49,3 +49,19 @@
 [commit]
 	template = ~/.config/git/commit-template
 	verbose = true
+
+# per-directory identities - ~/Development/<host>/<owner>/<repo>
+# broad patterns first, owner-specific overrides after (later include wins)
+[includeIf "gitdir:~/Development/github.com/"]
+	path = ~/.config/git/identities/github-personal
+
+[includeIf "gitdir:~/Development/gitlab.com/"]
+	path = ~/.config/git/identities/gitlab-personal
+
+# extra accounts: copy a ~/.config/git/identities/*.template, fill it, wire it here
+# work account on a public host - narrower pattern overrides the host-wide include above
+#[includeIf "gitdir:~/Development/github.com/<org>/"]
+#	path = ~/.config/git/identities/github-work
+# work account on a company host
+#[includeIf "gitdir:~/Development/company.github.com/"]
+#	path = ~/.config/git/identities/company-work

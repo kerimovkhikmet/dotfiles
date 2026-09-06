@@ -1,0 +1,6 @@
+[user]
+	name = Khikmet Kerimov
+	email = EMAIL_GITLAB
+
+[core]
+	sshCommand = ssh -i ~/.ssh/id_ed25519_gitlab -o IdentitiesOnly=yes

@@ -1,0 +1,9 @@
+# work account on a company host (company.github.com | company.gitlab.com)
+# use: copy per account, drop .template, fill placeholders, wire the include in .gitconfig
+# wire: [includeIf "gitdir:~/Development/<company-host>/"]
+[user]
+	name = Khikmet Kerimov
+	email = EMAIL_WORK
+
+[core]
+	sshCommand = ssh -i ~/.ssh/id_ed25519_work -o IdentitiesOnly=yes
