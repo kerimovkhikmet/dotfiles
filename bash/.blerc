@@ -6,3 +6,46 @@ bleopt default_keymap=emacs
 
 # completion menu with descriptions
 bleopt complete_menu_style=desc_raw
+# Rose Pine Moon palette (matches ghostty/kitty/wezterm themes)
+# text e0def4 - muted 6e6a86 - subtle 908caa - love eb6f92 - gold f6c177
+# rose ebbcba - pine 31748f - foam 9ccfd8 - iris c4a7e7 - highlight 403d52
+ble-face -s syntax_default fg=#e0def4
+ble-face -s syntax_command fg=#c4a7e7
+ble-face -s command_builtin fg=#9ccfd8
+ble-face -s command_builtin_dot fg=#9ccfd8
+ble-face -s command_alias fg=#ebbcba
+ble-face -s command_function fg=#ebbcba
+ble-face -s command_file fg=#e0def4
+ble-face -s command_directory fg=#9ccfd8
+# file-name candidates in the tab menu (filename_directory defaults to 256-color
+# 33 = the bright blue); ble-face -s replaces the whole spec, dropping underline
+ble-face -s filename_directory fg=#9ccfd8
+ble-face -s filename_executable fg=#f6c177
+ble-face -s filename_link fg=#c4a7e7
+ble-face -s filename_directory_sticky fg=#e0def4,bg=#403d52
+ble-face -s filename_orphan fg=#eb6f92,bg=#403d52
+ble-face -s command_keyword fg=#f6c177
+ble-face -s syntax_error fg=#eb6f92,bg=#403d52
+ble-face -s syntax_delimiter fg=#908caa
+ble-face -s syntax_quoted fg=#31748f
+ble-face -s syntax_quotation fg=#ebbcba
+ble-face -s syntax_escape fg=#f6c177
+ble-face -s syntax_expr fg=#ebbcba
+ble-face -s syntax_function_name fg=#f6c177
+ble-face -s syntax_glob fg=#ebbcba
+ble-face -s syntax_param_expansion fg=#c4a7e7
+ble-face -s syntax_varname fg=#9ccfd8
+ble-face -s syntax_tilde fg=#908caa
+ble-face -s syntax_comment fg=#6e6a86,it
+ble-face -s syntax_document fg=#6e6a86
+ble-face -s syntax_document_begin fg=#6e6a86
+ble-face -s syntax_history_expansion fg=#f6c177
+ble-face -s argument_option fg=#f6c177
+ble-face -s argument_error fg=#eb6f92
+ble-face -s auto_complete fg=#6e6a86,bg=none
+ble-face -s menu_complete_selected fg=#e0def4,bg=#403d52
+ble-face -s menu_complete_match fg=#f6c177
+ble-face -s menu_desc_default fg=#6e6a86
+ble-face -s menu_filter_input fg=#e0def4,bg=#403d52
+ble-face -s menu_filter_fixed fg=#6e6a86
+ble-face -s disabled fg=#6e6a86,bg=#403d52
