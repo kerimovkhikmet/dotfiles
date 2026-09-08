@@ -12,6 +12,11 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gap='git add --patch'
 
+# commit
+alias gc='git commit -v'
+alias gc!='git commit -v --amend'
+alias gca='git commit -v -a'
+
 # branch / checkout / switch
 alias gb='git branch'
 alias gba='git branch -a'
