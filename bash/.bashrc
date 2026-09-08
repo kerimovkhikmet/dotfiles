@@ -161,6 +161,15 @@ if [ -d "$TFENV_DIR/bin" ]; then
   esac
 fi
 
+# nvim - /opt release layout (Linux/WSL); brew manages PATH on macOS.
+# core.editor=nvim (gitconfig) needs it resolvable.
+if [ -d "/opt/nvim-linux-x86_64/bin" ]; then
+  case ":$PATH:" in
+    *":/opt/nvim-linux-x86_64/bin:"*) ;;
+    *) export PATH="/opt/nvim-linux-x86_64/bin:$PATH" ;;
+  esac
+fi
+
 # local bin - keep $HOME portable (macOS/Linux/WSL), for oh-my-posh etc.
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -171,3 +180,11 @@ fi
 
 # ble.sh attach - keep LAST (wraps oh-my-posh PROMPT_COMMAND); config in ~/.blerc
 [[ ${BLE_VERSION-} ]] && ble-attach
+
+# opencode - portable, deduped
+if [ -d "$HOME/.opencode/bin" ]; then
+  case ":$PATH:" in
+    *":$HOME/.opencode/bin:"*) ;;
+    *) export PATH="$HOME/.opencode/bin:$PATH" ;;
+  esac
+fi
