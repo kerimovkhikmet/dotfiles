@@ -14,12 +14,10 @@ bleopt complete_menu_style=desc
 # $_omp_execution_time (ms, -1 when idle) is set by omp's PROMPT_COMMAND hook.
 function _omp-ble-rps1 {
   local t=${_omp_execution_time:--1}
-  if [[ $t -ge 500 ]]; then
-    local s
-    printf -v s '%d.%03ds' $((t / 1000)) $((t % 1000))
-    printf 'took %s  ' "$s"
+  if (( t >= 500 )); then
+    printf 'took %d.%03ds  ' $((t / 1000)) $((t % 1000))
   fi
-  printf '\[\e[38;2;156;207;216m\]\t\[\e[0m\]'
+  printf '\e[38;2;156;207;216m%s\e[0m' "$(date +%H:%M:%S)"
 }
 bleopt prompt_rps1='$(_omp-ble-rps1)'
 
