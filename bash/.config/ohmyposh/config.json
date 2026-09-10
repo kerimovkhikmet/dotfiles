@@ -8,56 +8,56 @@
       "type": "prompt",
       "segments": [
         {
-          "foreground": "#E0DEF4",
+          "foreground": "#f6c177",
           "style": "plain",
           "template": "{{ .UserName }}{{ if .HostName }}@{{ .HostName }}{{ end }}",
           "type": "session"
         },
         {
-          "foreground": "#9CCFD8",
+          "foreground": "#9ccfd8",
           "style": "plain",
-          "template": " <#e0def4>in</> {{ .Path }}",
+          "template": " <#908caa>in</> {{ .Path }}",
           "type": "path",
           "properties": {
             "style": "full"
           }
         },
         {
-          "foreground": "#EB6F92",
+          "foreground": "#eb6f92",
           "style": "plain",
-          "template": " <#e0def4>on</> {{ .HEAD }}{{ if .Ahead }} ↑{{ .Ahead }}{{ end }}{{ if .Behind }} ↓{{ .Behind }}{{ end }}{{ if eq .Ahead 0 }}{{ if eq .Behind 0 }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}{{ end }}{{ end }}{{ if and (gt .Ahead 0) (gt .Behind 0) }} ↑↓{{ end }}",
+          "template": " <#908caa>on</> {{ .HEAD }}{{ if .Ahead }} ↑{{ .Ahead }}{{ end }}{{ if .Behind }} ↓{{ .Behind }}{{ end }}{{ if eq .Ahead 0 }}{{ if eq .Behind 0 }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}{{ end }}{{ end }}{{ if and (gt .Ahead 0) (gt .Behind 0) }} ↑↓{{ end }}",
           "type": "git",
           "properties": {
-            "branch_icon": "<#EB6F92><b> </b></>",
+            "branch_icon": "<#eb6f92><b> </b></>",
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true
           }
         },
         {
-          "foreground": "#6CC24A",
+          "foreground": "#6cc24a",
           "style": "plain",
           "type": "node"
         },
         {
-          "foreground": "#F472B6",
+          "foreground": "#f472b6",
           "style": "plain",
           "type": "bun"
         },
         {
-          "foreground": "#70FFAF",
+          "foreground": "#70ffaf",
           "style": "plain",
           "type": "deno"
         },
         {
-          "foreground": "#CC342D",
+          "foreground": "#cc342d",
           "style": "plain",
           "type": "ruby"
         },
         {
-          "foreground": "#FFD43B",
+          "foreground": "#ffd43b",
           "style": "plain",
-          "template": " <#e0def4>via</>  {{ if .Venv }}{{ .Venv }} {{ end }}{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "template": " <#908caa>via</>  {{ if .Venv }}{{ .Venv }} {{ end }}{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "type": "python",
           "properties": {
             "display_mode": "context",
@@ -65,112 +65,112 @@
           }
         },
         {
-          "foreground": "#60B5CC",
+          "foreground": "#60b5cc",
           "style": "plain",
           "type": "elm"
         },
         {
-          "foreground": "#A074C4",
+          "foreground": "#a074c4",
           "style": "plain",
           "type": "elixir"
         },
         {
-          "foreground": "#F05138",
+          "foreground": "#f05138",
           "style": "plain",
           "type": "swift"
         },
         {
-          "foreground": "#00ADD8",
+          "foreground": "#00add8",
           "style": "plain",
           "type": "golang"
         },
         {
-          "foreground": "#7A8CBF",
+          "foreground": "#7a8cbf",
           "style": "plain",
           "type": "perl"
         },
         {
-          "foreground": "#8892BF",
+          "foreground": "#8892bf",
           "style": "plain",
           "type": "php"
         },
         {
-          "foreground": "#DEA584",
+          "foreground": "#dea584",
           "style": "plain",
           "type": "rust"
         },
         {
-          "foreground": "#B47FE0",
+          "foreground": "#b47fe0",
           "style": "plain",
           "type": "haskell"
         },
         {
-          "foreground": "#DC322F",
+          "foreground": "#dc322f",
           "style": "plain",
           "type": "scala"
         },
         {
-          "foreground": "#7F52FF",
+          "foreground": "#7f52ff",
           "style": "plain",
           "type": "kotlin"
         },
         {
-          "foreground": "#D97706",
+          "foreground": "#d97706",
           "style": "plain",
           "type": "java"
         },
         {
-          "foreground": "#7AA2F7",
+          "foreground": "#7aa2f7",
           "style": "plain",
           "type": "lua"
         },
         {
-          "foreground": "#0175C2",
+          "foreground": "#0175c2",
           "style": "plain",
           "type": "dart"
         },
         {
-          "foreground": "#9558B2",
+          "foreground": "#9558b2",
           "style": "plain",
           "type": "julia"
         },
         {
-          "foreground": "#BE95FF",
+          "foreground": "#be95ff",
           "style": "plain",
           "type": "crystal"
         },
         {
-          "foreground": "#F7A41D",
+          "foreground": "#f7a41d",
           "style": "plain",
           "type": "zig"
         },
         {
-          "foreground": "#A90533",
+          "foreground": "#a90533",
           "style": "plain",
           "type": "erlang"
         },
         {
-          "foreground": "#FFAFF3",
+          "foreground": "#ffaff3",
           "style": "plain",
           "type": "gleam"
         },
         {
-          "foreground": "#F28C28",
+          "foreground": "#f28c28",
           "style": "plain",
           "type": "ocaml"
         },
         {
-          "foreground": "#5597D0",
+          "foreground": "#5597d0",
           "style": "plain",
           "type": "vlang"
         },
         {
-          "foreground": "#A3BE8C",
+          "foreground": "#a3be8c",
           "style": "plain",
           "type": "purescript"
         },
         {
-          "foreground": "#2496ED",
+          "foreground": "#2496ed",
           "style": "plain",
           "type": "docker"
         },
@@ -184,27 +184,27 @@
           }
         },
         {
-          "foreground": "#4285F4",
+          "foreground": "#4285f4",
           "style": "plain",
           "type": "gcloud"
         },
         {
-          "foreground": "#0078D4",
+          "foreground": "#0078d4",
           "style": "plain",
           "type": "az"
         },
         {
-          "foreground": "#512BD4",
+          "foreground": "#512bd4",
           "style": "plain",
           "type": "dotnet"
         },
         {
-          "foreground": "#326CE5",
+          "foreground": "#326ce5",
           "style": "plain",
           "type": "kubectl"
         },
         {
-          "foreground": "#EE0000",
+          "foreground": "#ee0000",
           "style": "plain",
           "type": "ansible"
         },
@@ -218,12 +218,12 @@
           }
         },
         {
-          "foreground": "#8A3391",
+          "foreground": "#8a3391",
           "style": "plain",
           "type": "pulumi"
         },
         {
-          "foreground": "#EB6F92",
+          "foreground": "#eb6f92",
           "style": "plain",
           "type": "battery",
           "template": " {{ if and (not .Error) (lt .Percentage 25.0) }}{{ .Icon }}{{ .Percentage }}{{ end }}"
@@ -236,7 +236,7 @@
       "type": "prompt",
       "segments": [
         {
-          "foreground": "#EB6F92",
+          "foreground": "#eb6f92",
           "style": "plain",
           "template": "{{ if gt .Code 0 }}✘{{ .Code }} {{ end }}",
           "type": "status",
@@ -245,7 +245,7 @@
           }
         },
         {
-          "foreground": "#9CCFD8",
+          "foreground": "#9ccfd8",
           "style": "plain",
           "template": "{{ if .Root }}#{{ else }}>{{ end }} ",
           "type": "text"
