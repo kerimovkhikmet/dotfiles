@@ -35,6 +35,26 @@
           }
         },
         {
+          "foreground": "#6CC24A",
+          "style": "plain",
+          "type": "node"
+        },
+        {
+          "foreground": "#F472B6",
+          "style": "plain",
+          "type": "bun"
+        },
+        {
+          "foreground": "#70FFAF",
+          "style": "plain",
+          "type": "deno"
+        },
+        {
+          "foreground": "#CC342D",
+          "style": "plain",
+          "type": "ruby"
+        },
+        {
           "foreground": "#FFD43B",
           "style": "plain",
           "template": " <#ffffff>via</>  {{ if .Venv }}{{ .Venv }} {{ end }}{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
@@ -43,6 +63,116 @@
             "display_mode": "context",
             "fetch_virtual_env": true
           }
+        },
+        {
+          "foreground": "#60B5CC",
+          "style": "plain",
+          "type": "elm"
+        },
+        {
+          "foreground": "#A074C4",
+          "style": "plain",
+          "type": "elixir"
+        },
+        {
+          "foreground": "#F05138",
+          "style": "plain",
+          "type": "swift"
+        },
+        {
+          "foreground": "#00ADD8",
+          "style": "plain",
+          "type": "golang"
+        },
+        {
+          "foreground": "#7A8CBF",
+          "style": "plain",
+          "type": "perl"
+        },
+        {
+          "foreground": "#8892BF",
+          "style": "plain",
+          "type": "php"
+        },
+        {
+          "foreground": "#DEA584",
+          "style": "plain",
+          "type": "rust"
+        },
+        {
+          "foreground": "#B47FE0",
+          "style": "plain",
+          "type": "haskell"
+        },
+        {
+          "foreground": "#DC322F",
+          "style": "plain",
+          "type": "scala"
+        },
+        {
+          "foreground": "#7F52FF",
+          "style": "plain",
+          "type": "kotlin"
+        },
+        {
+          "foreground": "#D97706",
+          "style": "plain",
+          "type": "java"
+        },
+        {
+          "foreground": "#7AA2F7",
+          "style": "plain",
+          "type": "lua"
+        },
+        {
+          "foreground": "#0175C2",
+          "style": "plain",
+          "type": "dart"
+        },
+        {
+          "foreground": "#9558B2",
+          "style": "plain",
+          "type": "julia"
+        },
+        {
+          "foreground": "#BE95FF",
+          "style": "plain",
+          "type": "crystal"
+        },
+        {
+          "foreground": "#F7A41D",
+          "style": "plain",
+          "type": "zig"
+        },
+        {
+          "foreground": "#A90533",
+          "style": "plain",
+          "type": "erlang"
+        },
+        {
+          "foreground": "#FFAFF3",
+          "style": "plain",
+          "type": "gleam"
+        },
+        {
+          "foreground": "#F28C28",
+          "style": "plain",
+          "type": "ocaml"
+        },
+        {
+          "foreground": "#5597D0",
+          "style": "plain",
+          "type": "vlang"
+        },
+        {
+          "foreground": "#A3BE8C",
+          "style": "plain",
+          "type": "purescript"
+        },
+        {
+          "foreground": "#2496ED",
+          "style": "plain",
+          "type": "docker"
         },
         {
           "foreground": "#ffaf00",
@@ -54,6 +184,31 @@
           }
         },
         {
+          "foreground": "#4285F4",
+          "style": "plain",
+          "type": "gcloud"
+        },
+        {
+          "foreground": "#0078D4",
+          "style": "plain",
+          "type": "az"
+        },
+        {
+          "foreground": "#512BD4",
+          "style": "plain",
+          "type": "dotnet"
+        },
+        {
+          "foreground": "#326CE5",
+          "style": "plain",
+          "type": "kubectl"
+        },
+        {
+          "foreground": "#EE0000",
+          "style": "plain",
+          "type": "ansible"
+        },
+        {
           "foreground": "#844ae7",
           "style": "plain",
           "template": " tf:{{ .WorkspaceName }}",
@@ -61,6 +216,11 @@
           "properties": {
             "command": "terraform"
           }
+        },
+        {
+          "foreground": "#8A3391",
+          "style": "plain",
+          "type": "pulumi"
         },
         {
           "foreground": "yellow",
@@ -74,13 +234,10 @@
           }
         },
         {
-          "foreground": "lightBlue",
+          "foreground": "#EB6F92",
           "style": "plain",
-          "template": "{{ .CurrentDate | date \"15:04:05\" }}",
-          "type": "time",
-          "properties": {
-            "time_format": "15:04:05"
-          }
+          "type": "battery",
+          "template": " {{ if and (not .Error) (lt .Percentage 25.0) }}{{ .Icon }}{{ .Percentage }}{{ end }}"
         }
       ]
     },
