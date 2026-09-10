@@ -1,7 +1,8 @@
 # ~/.blerc - ble.sh config, loaded on attach
 # full option list: ~/.local/share/blesh/doc/ or https://akinomyoga.github.io/ble.sh/
 
-# keymap - emacs is default; switch to vi with: bleopt default_keymap=vi
+# keymap - emacs is deliberate (2026-09-08): continuity with stock bash/omz;
+# vi keymap = future switch (nvim/VSCodeVim parity argument noted)
 bleopt default_keymap=emacs
 
 # completion menu with descriptions
@@ -21,6 +22,15 @@ function _omp-ble-rps1 {
   printf '\[\e[38;2;156;207;216m\]\t\[\e[0m\]'
 }
 bleopt prompt_rps1='$(_omp-ble-rps1)'
+
+# history - zsh-style prefix filter: Up/Down cycle entries matching the current
+# input as a prefix (ble.sh ships only substring-search widgets; dropping the
+# "substr" opt makes the needle match "$ndl"* per ble-edit/nsearch/.test).
+# Empty input matches everything, i.e. plain history cycling.
+function ble/widget/history-prefix-prev { ble/widget/history-search "input:backward"; }
+function ble/widget/history-prefix-next { ble/widget/history-search "input:forward"; }
+ble-bind -m emacs -c 'Up'   'history-prefix-prev'
+ble-bind -m emacs -c 'Down' 'history-prefix-next'
 
 # Rose Pine Moon palette (matches ghostty/kitty/wezterm themes)
 # text e0def4 - muted 6e6a86 - subtle 908caa - love eb6f92 - gold f6c177
