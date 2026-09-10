@@ -21,14 +21,47 @@ function _omp-ble-rps1 {
 }
 bleopt prompt_rps1='$(_omp-ble-rps1)'
 
-# history - zsh-style prefix filter: Up/Down cycle entries matching the current
-# input as a prefix (ble.sh ships only substring-search widgets; dropping the
-# "substr" opt makes the needle match "$ndl"* per ble-edit/nsearch/.test).
-# Empty input matches everything, i.e. plain history cycling.
-function ble/widget/history-prefix-prev { ble/widget/history-search "input:backward"; }
-function ble/widget/history-prefix-next { ble/widget/history-search "input:forward"; }
-ble-bind -m emacs -c 'Up'   'history-prefix-prev'
-ble-bind -m emacs -c 'Down' 'history-prefix-next'
+# history - zsh-style prefix filter: Up/Down immediately cycle entries starting
+# with the typed prefix (empty input cycles everything, like plain Up/Down).
+# Implemented directly on ble.sh's history API - history-search always opens
+# the interactive nsearch UI, which Up/Down must not do. The original prefix is
+# remembered while the line is untouched, so repeated presses keep cycling the
+# same set instead of narrowing to the full matched line.
+function ble/widget/history-prefix-search {
+  local dir=$1
+  local cur=${_ble_edit_str::_ble_edit_ind} needle start
+  local index count
+  ble/history/get-index -v index
+  ble/history/get-count -v count
+  if [[ -n ${_ble_hist_prefix_active-} && $cur == "$_ble_hist_prefix_placed" ]]; then
+    needle=$_ble_hist_prefix_needle
+    start=$index
+  else
+    needle=$cur
+    _ble_hist_prefix_needle=$needle
+    if (( dir < 0 )); then
+      start=$count
+    else
+      start=$index
+    fi
+  fi
+  local i=$((start + dir)) entry
+  while (( 0 <= i && i <= count )); do
+    ble/history/get-entry -v entry "$i"
+    if [[ $entry == "$needle"* ]]; then
+      ble-edit/history/goto "$i" point=end
+      _ble_hist_prefix_placed=$entry
+      _ble_hist_prefix_active=1
+      return 0
+    fi
+    ((i += dir))
+  done
+  ble/widget/.bell
+}
+function ble/widget/history-prefix-prev { ble/widget/history-prefix-search -1; }
+function ble/widget/history-prefix-next { ble/widget/history-prefix-search +1; }
+ble-bind -m emacs -f 'up'   'history-prefix-prev'
+ble-bind -m emacs -f 'down' 'history-prefix-next'
 
 # Rose Pine Moon palette (matches ghostty/kitty/wezterm themes)
 # text e0def4 - muted 6e6a86 - subtle 908caa - love eb6f92 - gold f6c177
