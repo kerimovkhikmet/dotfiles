@@ -223,17 +223,6 @@
           "type": "pulumi"
         },
         {
-          "foreground": "yellow",
-          "style": "plain",
-          "template": " took {{ .FormattedMs }}",
-          "type": "executiontime",
-          "properties": {
-            "always_enabled": false,
-            "threshold": 500,
-            "style": "austin"
-          }
-        },
-        {
           "foreground": "#EB6F92",
           "style": "plain",
           "type": "battery",
