@@ -236,15 +236,6 @@
       "type": "prompt",
       "segments": [
         {
-          "foreground": "#eb6f92",
-          "style": "plain",
-          "template": "{{ if gt .Code 0 }}✘{{ .Code }} {{ end }}",
-          "type": "status",
-          "properties": {
-            "always_enabled": false
-          }
-        },
-        {
           "foreground": "#9ccfd8",
           "style": "plain",
           "template": "{{ if .Root }}#{{ else }}>{{ end }} ",

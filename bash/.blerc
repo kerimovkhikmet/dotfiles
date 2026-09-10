@@ -12,7 +12,22 @@ bleopt complete_menu_style=desc
 # right (zsh RPROMPT parity). ble.sh renders rps1 natively - oh-my-posh's
 # padded right block in PS1 is what ble.sh mismeasured (the >-to-cursor gap).
 # $_omp_execution_time (ms, -1 when idle) is set by omp's PROMPT_COMMAND hook.
+# true exit status, captured in a POSTEXEC hook: ble.sh's own trap handling
+# resets $? before PROMPT_COMMAND runs on signal-killed commands (so omp's
+# $_omp_status reads 0 there), but hooks run with the status still intact.
+# The trailing return preserves $? for everything downstream.
+function _ble-save-status { _BLE_LAST_STATUS=$?; return "$_BLE_LAST_STATUS"; }
+blehook POSTEXEC+=_ble-save-status
+
+# redundant with ✘N in the right prompt - disable ble.sh's own marker line
+# (bleopt assigns only as NAME=VALUE; a bare name just prints)
+bleopt exec_errexit_mark=
+
 function _omp-ble-rps1 {
+  local code=${_BLE_LAST_STATUS:-${_omp_status:-0}}
+  if (( code != 0 )); then
+    printf '\e[38;2;235;111;146m✘%s\e[0m  ' "$code"
+  fi
   local t=${_omp_execution_time:--1}
   if (( t >= 500 )); then
     printf 'took %d.%03ds  ' $((t / 1000)) $((t % 1000))
