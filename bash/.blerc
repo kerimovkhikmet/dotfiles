@@ -5,7 +5,13 @@
 bleopt default_keymap=emacs
 
 # completion menu with descriptions
-bleopt complete_menu_style=desc_raw
+bleopt complete_menu_style=desc
+
+# right prompt - clock at far right of the prompt line (zsh RPROMPT parity);
+# ble.sh renders it natively - oh-my-posh's padded right block in PS1 is what
+# ble.sh mismeasured (the >-to-cursor gap)
+bleopt prompt_rps1='\[\e[94m\]\t\[\e[0m\]'
+
 # Rose Pine Moon palette (matches ghostty/kitty/wezterm themes)
 # text e0def4 - muted 6e6a86 - subtle 908caa - love eb6f92 - gold f6c177
 # rose ebbcba - pine 31748f - foam 9ccfd8 - iris c4a7e7 - highlight 403d52
