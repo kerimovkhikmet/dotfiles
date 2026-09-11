@@ -57,9 +57,11 @@ One identity file per (host, account) pair in [`git/.config/git/identities/`](gi
 
 Each file sets `user.name`/`user.email` plus `core.sshCommand` (one ed25519 key per account, `IdentitiesOnly`), so commits and pushes pick the right identity and key from the repo's directory alone - no `~/.ssh/config` aliases, no remote URL rewriting. Narrower `gitdir` patterns listed after the broad ones override them, and repo-local `git config` still wins over everything.
 
+Only the `*.template` files live in this repo. The live identities - real name, email, and key path - are private, untracked files under `~/.config/git/identities/` and are never pushed. `install.sh` seeds them from the templates on first run; `stow` leaves them alone (they are not part of the package).
+
 To add a work account: generate its key, copy the matching template (drop `.template`, fill `EMAIL_WORK` and the key path), then uncomment and adjust the matching example block in the `.gitconfig`. Work on a public host narrows to the org directory (`github.com/<org>/`) and overrides the personal host-wide include; a company host gets its own host-wide pattern.
 
-Personal setup: generate the keys, add the public halves to each provider, fill `EMAIL_GITHUB`/`EMAIL_GITLAB` in the identity files.
+Personal setup: generate the keys, add the public halves to each provider, then fill `EMAIL_GITHUB`/`EMAIL_GITLAB` in the private identity files under `~/.config/git/identities/` (seeded by `install.sh`).
 
 ```sh
 ssh-keygen -t ed25519 -C github -f ~/.ssh/id_ed25519_github

@@ -1,3 +1,5 @@
+# personal GitHub account
+# install.sh copies this to ~/.config/git/identities/github-personal if absent; fill EMAIL_GITHUB
 [user]
 	name = Khikmet Kerimov
 	email = EMAIL_GITHUB

@@ -111,6 +111,27 @@ install_tpm() {
   run git clone --depth=1 https://github.com/tmux-plugins/tpm.git "$HOME/.tmux/plugins/tpm"
 }
 
+# seed live identity files from *.template - keeps real name/email out of the repo
+# personal accounts only; work-*.template are per-account copies, wired manually
+seed_identities() {
+  local src="$DOTFILES_DIR/git/.config/git/identities"
+  local dest="$HOME/.config/git/identities"
+  [[ -d "$src" ]] || return 0
+  local tmpl base
+  for tmpl in "$src"/*.template; do
+    [[ -e "$tmpl" ]] || continue
+    base="$(basename "$tmpl" .template)"
+    case "$base" in work-*) continue ;; esac
+    if [[ -e "$dest/$base" ]]; then
+      info "identity $base - ok"
+    else
+      info "seeding identity $base from template (fill placeholders)"
+      run mkdir -p "$dest"
+      run cp "$tmpl" "$dest/$base"
+    fi
+  done
+}
+
 # --- 2. submodules (nvim) ---
 info "syncing submodules..."
 run git -C "$DOTFILES_DIR" submodule update --init --recursive
@@ -135,6 +156,8 @@ for pkg in "${PACKAGES[@]}"; do
     else run stow -R --no-folding -v -d "$DOTFILES_DIR" -t "$HOME" "$pkg"; fi
   else warn "package $pkg missing at $DOTFILES_DIR/$pkg - skip"; fi
 done
+
+seed_identities
 
 # --- 4. verify ---
 info "verify: stow -n -v dry-run for each package (should be no-ops)"

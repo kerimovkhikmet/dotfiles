@@ -1,3 +1,5 @@
+# personal GitLab account
+# install.sh copies this to ~/.config/git/identities/gitlab-personal if absent; fill EMAIL_GITLAB
 [user]
 	name = Khikmet Kerimov
 	email = EMAIL_GITLAB
