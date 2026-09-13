@@ -53,7 +53,7 @@ One identity file per (host, account) pair in [`git/.config/git/identities/`](gi
 | `~/Development/gitlab.com/` | `gitlab-personal` |
 | `~/Development/<host>/<org>/` | work on a public host - copy `work-saas.template` |
 | `~/Development/company.<host>/` | work on a company host - copy `work-selfhosted.template` |
-| anywhere else | global `[user]` (personal GitHub) |
+| anywhere else | `default` identity (private fallback) |
 
 Each file sets `user.name`/`user.email` plus `core.sshCommand` (one ed25519 key per account, `IdentitiesOnly`), so commits and pushes pick the right identity and key from the repo's directory alone - no `~/.ssh/config` aliases, no remote URL rewriting. Narrower `gitdir` patterns listed after the broad ones override them, and repo-local `git config` still wins over everything.
 

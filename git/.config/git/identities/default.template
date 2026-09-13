@@ -1,0 +1,5 @@
+# global default identity - used outside the per-directory includeIf paths
+# install.sh copies this to ~/.config/git/identities/default if absent; fill EMAIL_GITHUB
+[user]
+	name = Khikmet Kerimov
+	email = EMAIL_GITHUB

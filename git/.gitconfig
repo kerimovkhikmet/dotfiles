@@ -1,6 +1,7 @@
-[user]
-	name = Khikmet Kerimov
-	email = 22275642+kerimovkhikmet@users.noreply.github.com
+# global default identity - private file, seeded by install.sh (seed_identities)
+# the per-directory includeIf blocks below override it
+[include]
+	path = ~/.config/git/identities/default
 
 [init]
 	defaultBranch = master
