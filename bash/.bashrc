@@ -170,6 +170,10 @@ if [ -d "/opt/nvim-linux-x86_64/bin" ]; then
   esac
 fi
 
+# default editor - EDITOR for line/non-interactive tools, VISUAL for full-screen
+export EDITOR=nvim
+export VISUAL=nvim
+
 # local bin - keep $HOME portable (macOS/Linux/WSL), for oh-my-posh etc.
 export PATH="$HOME/.local/bin:$PATH"
 
