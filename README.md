@@ -19,7 +19,7 @@ The script installs `stow`, `oh-my-posh`, and `ble.sh` (apt/dnf/brew/tarball), c
 | `bash` | `~/.bashrc`, `~/.profile`, `~/.bash_aliases`, `~/.blerc`, `~/.config/ohmyposh/` | oh-my-posh prompt + ble.sh autosuggestions, context-gated segments |
 | `zsh` | `~/.zshrc`, `~/.config/spaceship/` | oh-my-zsh + spaceship fallback |
 | `git` | `~/.gitconfig`, `~/.config/git/`, `~/.pre-commit-config.yaml` | commit template, global hooks (lint + commit-msg), `credential.helper=os`, per-directory identities |
-| `nvim` | `~/.config/nvim/` | [kickstart.nvim](https://github.com/kerimovkhikmet/kickstart.nvim) submodule - requires nvim ≥ 0.12 |
+| `nvim` | `~/.config/nvim/` | [kickstart.nvim](https://github.com/kerimovkhikmet/kickstart.nvim) submodule - requires nvim >= 0.12 |
 | `vim` | `~/.vimrc` | minimal shim, nvim is primary |
 | `ghostty` | `~/.config/ghostty/` | Rose Pine Moon |
 | `tmux` | `~/.config/tmux/tmux.conf` | C-a prefix, TPM + rose-pine, `prefix+f` sessionizer |
